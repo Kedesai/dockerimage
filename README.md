@@ -1,2 +1,2 @@
 # dockerinit
-run docker init through ci  process Will also try to make it a CD process to install it locally.
+Create a Docker image and push it to Docker Container repo.
