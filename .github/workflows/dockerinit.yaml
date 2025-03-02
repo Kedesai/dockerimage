@@ -1,4 +1,4 @@
-name: Docker Init for Python
+name: Docker Build and Push
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  docker-init:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -14,10 +14,6 @@ jobs:
 
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2
-
-      - name: Run docker init for Python
-        run: |
-          echo -e "1\n1\n3.9\n./app\npython main.py\n" | docker init
 
       - name: Build Docker image
         run: docker build -t my-python-app .
