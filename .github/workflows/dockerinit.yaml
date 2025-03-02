@@ -21,8 +21,11 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-python-app .
 
+      - name: List Docker images
+        run: docker images
+
       - name: Push Docker image
         run: |
           docker build . --file Dockerfile --tag my-image-name:$(date +%s)
           docker tag my-python-app kedesai/my-python-app:latest
-          docker push kedesai/rockymountain:latest
+          docker push kedesai/my-python-app:latest
