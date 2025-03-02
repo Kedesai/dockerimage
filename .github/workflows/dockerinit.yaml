@@ -23,5 +23,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker tag my-python-app my-dockerhub-username/my-python-app:latest
+          docker tag my-python-app kedesai/my-python-app:latest
           docker push kedesai/rockymountain:latest
